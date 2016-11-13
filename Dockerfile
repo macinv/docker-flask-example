@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7-alpine
 MAINTAINER Jeff Li <jeff.li@mackenzieinvestments.com>
 
 COPY . /app
