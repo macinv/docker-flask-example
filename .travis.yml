@@ -1,9 +1,18 @@
 language: python
-python:
-  - 2.7
+
+sudo: required
+
+services:
+ - docker
+
+env:
+  global:
+    - IMAGE_NAME=flask-example
+    - CONTAINER_NAME=flask-test
 
 services:
   - docker
 
 script:
-  - docker build -t flask-example .
+  - bash test_docker.sh
+  - curl -i 0.0.0.0:8080
